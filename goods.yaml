@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: goods
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: goods
+    spec:
+      containers:
+      - name: goods
+        imagePullPolicy: Always
+        image: 192.168.2.169/demo/goods:latest
+        ports:
+        - containerPort: 8812
+      imagePullSecrets:
+      - name: registry-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: goods
+  labels:
+    app: goods
+spec:
+  ports:
+  - port: 8812
+    protocol: TCP
+    targetPort: 8812
+  selector:
+    app: goods
+  type: ClusterIP

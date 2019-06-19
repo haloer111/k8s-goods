@@ -1,0 +1,14 @@
+server:
+  port: 8812
+spring:
+  application:
+    name: goods
+
+# 配置注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    enabled: false
+  instance:
+    prefer-ip-address: true
