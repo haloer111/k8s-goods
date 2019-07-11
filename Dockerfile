@@ -1,4 +1,4 @@
-FROM registry.cn-hangzhou.aliyuncs.com/acs-sample/slave-java8:63b99a20
+FROM openjdk:8
 
 MAINTAINER 345249961@qq.com
 
