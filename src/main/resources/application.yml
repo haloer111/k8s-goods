@@ -8,7 +8,7 @@ spring:
     name: test
     url: jdbc:mysql://192.168.2.169:3306/${spring.datasource.name}?serverTimezone=GMT%2B8
     username: root
-    password: aA111111
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
 
 
